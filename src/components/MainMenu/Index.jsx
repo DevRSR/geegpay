@@ -7,7 +7,7 @@ import { motion } from 'framer-motion'
 function Index() {
 
   const [activeId, setActiveId] = useState('1');
-  const [active, setActive] = useState(true);
+  const [active, setActive] = useState(false);
   
     function handleClick (id) {
       setActiveId(id)
