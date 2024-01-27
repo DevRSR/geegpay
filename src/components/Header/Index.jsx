@@ -2,7 +2,7 @@ import React from 'react'
 import { useClickAway } from 'react-use';
 import { useState, useRef } from 'react'
 import { Squash as Hamburger } from 'hamburger-react';
-import MainMenu from '../MainMenu/index';
+import MainMenu from '../Menu/index';
 import img from '../../assets/bergson.svg'
 
 
