@@ -1,7 +1,6 @@
 import React from 'react'
 import { createPortal } from 'react-dom'
-import MainMenu from '../Menu/index' // Fix the casing of the file name
-
+import MainMenu from '../Menu/Index.jsx'
 
 function Index() {
     return createPortal (
