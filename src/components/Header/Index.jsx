@@ -2,7 +2,7 @@ import React from 'react'
 import { useClickAway } from 'react-use';
 import { useState, useRef } from 'react'
 import { Squash as Hamburger } from 'hamburger-react';
-import MainMenu from '../Menu/index';
+import MainMenu from '../Menu/Index';
 import img from '../../assets/bergson.svg'
 
 
@@ -16,7 +16,7 @@ function Index() {
 
 
   return (
-    <div className='flex items-center h-[88px] gap-5 dark:bg-slate-800 bg-[#fafafa] sm:gap-3 lg:gap-[22px] p-2 sm:p-3  xl:p-5 border-b-[1px] w-full'>
+    <div className='flex items-center h-[88px] gap-5 dark:bg-slate-800 bg-[#fafafa] sm:gap-3 lg:gap-[22px] p-2 sm:p-3  xl:p-5 border-b-[1px] w-full z-10'>
         <div className='flex justify-between flex-1 items-center'>
             <div ref={ref} className='relative  md:hidden flex flex-col justify-center items-center'>
                 <Hamburger toggled={isOpen} toggle={setOpen} color='#26282C' size={20} />

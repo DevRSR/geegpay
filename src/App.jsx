@@ -16,7 +16,7 @@ function App() {
      <SideBar />
 
      <div className=" relative flex flex-col w-full h-24 bg-[#fafafa] dark:bg-slate-800">
-      <div className=' fixed top-0 left-0 w-full md:left-20 md:w-[calc(100%-80px)] bg-white'>
+      <div className=' fixed top-0 left-0 w-full md:left-20 md:w-[calc(100%-80px)] bg-white z-10'>
         <Header />
       </div>
       <div className="flex flex-col-reverse lg:flex-row dark:bg-slate-800 bg-[#fafafa] gap-5 lg:gap-[15px] p-2 sm:p-3 xl:gap-5 xl:p-5 mt-[88px] w-full">
