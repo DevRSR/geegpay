@@ -16,6 +16,7 @@ function App() {
      <SideBar />
 
      <div className=" relative flex flex-col w-full h-24 bg-[#fafafa] dark:bg-slate-800">
+
       <div className=' fixed top-0 left-0 w-full md:left-20 md:w-[calc(100%-80px)] bg-white z-10'>
         <Header />
       </div>
