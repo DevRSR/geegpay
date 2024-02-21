@@ -102,7 +102,7 @@ function Index() {
                      initial={{ opacity: 0, translateX: '100px'}}
                      animate={{  opacity: 1, translateX: 0 }} 
                      transition={{ duration: .3, delay: 0.3}}
-                    className="absolute w-full text-sm dark:text-slate-100 dark:bg-slate-800 bg-white top-16 left-0 z-50 flex flex-col rounded-md shadow-lg p-4"
+                    className="absolute w-full text-sm dark:text-slate-100 dark:bg-slate-800 bg-white top-16 right-0 z-50 flex flex-col rounded-md shadow-lg p-4"
                 >
                     <div className="flex items-center gap-4">
                         <span className=' font-semibold'>Name:</span>
