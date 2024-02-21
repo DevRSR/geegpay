@@ -13,6 +13,7 @@ function Index() {
  const [showProfile, setShowProfile] = useState(false)
  const [showNotification, setShowNotification] = useState(false)
     const ref = useRef(null);
+    const dateRef = useRef()
     useClickAway(ref, () => {
         if (isOpen) setOpen(false);
     });
@@ -23,6 +24,10 @@ function Index() {
             handleNotification()
         }
         setShowProfile( prev => !prev)
+    }
+
+    function handleDate () {
+       dateRef.current.showPicker();
     }
 
     function handleNotification () {
@@ -54,14 +59,16 @@ function Index() {
         </div>
 
         <div className="flex items-center gap-1 xl:gap-5 lg:gap-3">
-            <div className=" hidden lg:flex items-center gap-[10px]">
+            <label onClick={handleDate} for ='date'  className=" relative  hidden lg:flex items-center gap-[10px]">
                 <svg className=' dark:stroke-white dark:fill-white dark:border-white w-3 h-3 lg:w-[15px] lg:h-[15px] xl:w-5 xl:h-5' xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                     <path className='dark:stroke-white dark:fill-black' d="M2 9.79483C2 6.70067 2 5.15318 2.9376 4.19236C3.8744 3.23071 5.3832 3.23071 8.4 3.23071H11.6C14.6168 3.23071 16.1256 3.23071 17.0624 4.19236C18 5.15318 18 6.70067 18 9.79483V11.4359C18 14.53 18 16.0775 17.0624 17.0383C16.1256 18 14.6168 18 11.6 18H8.4C5.3832 18 3.8744 18 2.9376 17.0383C2 16.0775 2 14.53 2 11.4359V9.79483Z" stroke="black" stroke-width="1.37144"/>
                     <path className='dark:stroke-white ' d="M5.9999 3.23077V2M13.9999 3.23077V2M2.3999 7.33334H17.5999" stroke="black" stroke-width="1.37144" stroke-linecap="round"/>
                     <path className=' dark:fill-white' d="M14.8002 13.8974C14.8002 14.115 14.7159 14.3237 14.5659 14.4776C14.4159 14.6314 14.2124 14.7179 14.0002 14.7179C13.788 14.7179 13.5845 14.6314 13.4345 14.4776C13.2845 14.3237 13.2002 14.115 13.2002 13.8974C13.2002 13.6798 13.2845 13.4711 13.4345 13.3172C13.5845 13.1633 13.788 13.0769 14.0002 13.0769C14.2124 13.0769 14.4159 13.1633 14.5659 13.3172C14.7159 13.4711 14.8002 13.6798 14.8002 13.8974ZM14.8002 10.6153C14.8002 10.8329 14.7159 11.0416 14.5659 11.1955C14.4159 11.3494 14.2124 11.4358 14.0002 11.4358C13.788 11.4358 13.5845 11.3494 13.4345 11.1955C13.2845 11.0416 13.2002 10.8329 13.2002 10.6153C13.2002 10.3977 13.2845 10.189 13.4345 10.0351C13.5845 9.88125 13.788 9.7948 14.0002 9.7948C14.2124 9.7948 14.4159 9.88125 14.5659 10.0351C14.7159 10.189 14.8002 10.3977 14.8002 10.6153ZM10.8002 13.8974C10.8002 14.115 10.7159 14.3237 10.5659 14.4776C10.4159 14.6314 10.2124 14.7179 10.0002 14.7179C9.78802 14.7179 9.58454 14.6314 9.43451 14.4776C9.28448 14.3237 9.2002 14.115 9.2002 13.8974C9.2002 13.6798 9.28448 13.4711 9.43451 13.3172C9.58454 13.1633 9.78802 13.0769 10.0002 13.0769C10.2124 13.0769 10.4159 13.1633 10.5659 13.3172C10.7159 13.4711 10.8002 13.6798 10.8002 13.8974ZM10.8002 10.6153C10.8002 10.8329 10.7159 11.0416 10.5659 11.1955C10.4159 11.3494 10.2124 11.4358 10.0002 11.4358C9.78802 11.4358 9.58454 11.3494 9.43451 11.1955C9.28448 11.0416 9.2002 10.8329 9.2002 10.6153C9.2002 10.3977 9.28448 10.189 9.43451 10.0351C9.58454 9.88125 9.78802 9.7948 10.0002 9.7948C10.2124 9.7948 10.4159 9.88125 10.5659 10.0351C10.7159 10.189 10.8002 10.3977 10.8002 10.6153ZM6.8002 13.8974C6.8002 14.115 6.71591 14.3237 6.56588 14.4776C6.41585 14.6314 6.21237 14.7179 6.0002 14.7179C5.78802 14.7179 5.58454 14.6314 5.43451 14.4776C5.28448 14.3237 5.2002 14.115 5.2002 13.8974C5.2002 13.6798 5.28448 13.4711 5.43451 13.3172C5.58454 13.1633 5.78802 13.0769 6.0002 13.0769C6.21237 13.0769 6.41585 13.1633 6.56588 13.3172C6.71591 13.4711 6.8002 13.6798 6.8002 13.8974ZM6.8002 10.6153C6.8002 10.8329 6.71591 11.0416 6.56588 11.1955C6.41585 11.3494 6.21237 11.4358 6.0002 11.4358C5.78802 11.4358 5.58454 11.3494 5.43451 11.1955C5.28448 11.0416 5.2002 10.8329 5.2002 10.6153C5.2002 10.3977 5.28448 10.189 5.43451 10.0351C5.58454 9.88125 5.78802 9.7948 6.0002 9.7948C6.21237 9.7948 6.41585 9.88125 6.56588 10.0351C6.71591 10.189 6.8002 10.3977 6.8002 10.6153Z" fill="black"/>
                 </svg>
                 <h4 className='lg:text-[10px] dark:text-slate-200 xl:text-sm font-medium font-sans'>November 15, 2023</h4>
-            </div>
+                
+                <input type="date" ref={dateRef} name="date" id="date" className=' absolute w-full top-0 left-0 invisible' />
+            </label>
 
             <button onClick={ handleNotification } className="relative flex sm:w-8 sm:h-8 xl:h-10 xl:w-10 rounded-full border-[1px] items-center justify-center">
                 <svg className=' w-5 h-5  lg:w-[15px] lg:h-[15px] xl:w-5 xl:h-5' xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -73,9 +80,9 @@ function Index() {
                         initial={{ translateY: '-100px', translateX: '-50px', opacity: 0}}
                         animate={{ translateY: 0, opacity: 1}}
                         transition={{ duration: .3, delay: 0.3}}
-                        className="absolute flex items-center justify-center w-48 p-2 text-sm h-24 top-14 left-0 rounded-md shadow-md bg-white"
+                        className="absolute flex items-center text-slate-600 dark:text-slate-100 dark:bg-slate-800 justify-center w-48 p-2 text-sm h-24 top-14 left-0 rounded-md shadow-lg bg-white"
                     >
-                        <p className=' text-slate-600 font-semibold'>No Notification at the moment</p>
+                        <p className=' font-semibold'>No Notification at the moment</p>
                     </motion.div>}
             </button>
 
@@ -95,18 +102,18 @@ function Index() {
                      initial={{ opacity: 0, translateX: '100px'}}
                      animate={{  opacity: 1, translateX: 0 }} 
                      transition={{ duration: .3, delay: 0.3}}
-                    className="absolute w-full text-sm bg-white top-16 left-0 z-50 flex flex-col rounded-md shadow-md p-4"
+                    className="absolute w-full text-sm dark:text-slate-100 dark:bg-slate-800 bg-white top-16 left-0 z-50 flex flex-col rounded-md shadow-lg p-4"
                 >
                     <div className="flex items-center gap-4">
-                        <span>Name:</span>
+                        <span className=' font-semibold'>Name:</span>
                         <p>Justin Bergson</p>
                     </div>
                     <div className="flex items-center gap-4">
-                        <span>Email:</span>
+                        <span className=' font-semibold'>Email:</span>
                         <p>Justin@gmail.com</p>
                     </div>
                     <div className="flex items-center gap-5">
-                        <span>Role:</span>
+                        <span className=' font-semibold'>Role:</span>
                         <p>Admin</p>
                     </div>
 

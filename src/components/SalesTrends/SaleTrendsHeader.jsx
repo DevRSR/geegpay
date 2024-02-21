@@ -44,11 +44,11 @@ function SaleTrendsHeader() {
                     transition={{ duration: .3 }}
                     exit={{ opacity: 0, y: -10 }}
 
-                    className="absolute flex flex-col top-9 shadow left-0 right-0 w-auto h-auto p-2 gap-2 rounded-lg bg-white">
-                    <button onClick={ handleClick } className=' hover:bg-slate-50'>Daily</button>
-                    <button onClick={ handleClick } className=' hover:bg-slate-50'>Weekly</button>
-                    <button onClick={ handleClick } className=' hover:bg-slate-50'>Monthly</button>
-                    <button onClick={ handleClick } className=' hover:bg-slate-50'>Yearly</button>
+                    className="absolute flex flex-col top-9 shadow left-0 right-0 w-auto h-auto p-2 gap-2 rounded-lg bg-white dark:text-slate-100 dark:bg-slate-800">
+                    <button onClick={ handleClick } className=' hover:opacity-85'>Daily</button>
+                    <button onClick={ handleClick } className=' hover:opacity-85'>Weekly</button>
+                    <button onClick={ handleClick } className=' hover:opacity-85'>Monthly</button>
+                    <button onClick={ handleClick } className=' hover:opacity-85'>Yearly</button>
                 </motion.div>}
             </div>
            
