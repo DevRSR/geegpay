@@ -80,7 +80,7 @@ function Index() {
                         initial={{ translateY: '-100px', translateX: '-50px', opacity: 0}}
                         animate={{ translateY: 0, opacity: 1}}
                         transition={{ duration: .3, delay: 0.3}}
-                        className="absolute flex items-center text-slate-600 dark:text-slate-100 dark:bg-slate-800 justify-center w-48 p-2 text-sm h-24 top-14 left-0 rounded-md shadow-lg bg-white"
+                        className="absolute flex items-center text-slate-600 dark:text-slate-100 dark:bg-slate-800 justify-center w-48 p-2 text-sm h-24 top-14 right-0 rounded-md shadow-lg bg-white"
                     >
                         <p className=' font-semibold'>No Notification at the moment</p>
                     </motion.div>}
